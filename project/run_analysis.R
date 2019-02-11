@@ -43,16 +43,19 @@ fullDf <- fullDf[, c(1, 2, (varPosit+2))]
 actLab <- read.table("activity_labels.txt", header = FALSE)
 ## adds a new variable that codes the activity names to the data frame, then 
 ## replaces number labels of activity with the descriptive names.
-fullDf <- merge(fullDf, actLab, by.x ="V1.1", by.y = "V1") %>%
-      mutate("V1.1" = V2.y, V2.y = NULL) 
+fullDf[, 2] <- factor(fullDf[, 2], levels = actLab[,1], labels = actLab[,2])
+## an option is using merge(), yet doing this way the levels of the activity labels 
+## and the data frame will be reordered
+## fullDf <- merge(fullDf, actLab, by.x ="V1.1", by.y = "V1") %>%
+##           mutate("V1.1" = V2.y, V2.y = NULL) 
 
 # 4. Appropriately labels the data set with descriptive variable names
 varNames <- varNames[varPosit] 
-colnames(fullDf) <- colNames <- c("activity", "ID", as.character(varNames))
+colnames(fullDf) <- colNames <- c("ID", "activity", as.character(varNames))
 ## varNames = names of measurements; colNames = names of all columns in the data set
 
 # 5.From the data set in step 4, creates a second, independent tidy data set 
 #   with the average of each variable for each activity and each subject.
 tDf <- group_by(fullDf, ID, activity) %>%
       summarise_all(funs(mean))
-write.csv(tDf, "tidyData.csv", sep = ",", col.names = colNames, row.names = FALSE)
+write.table(tDf, "tidyData.txt", sep = ",", col.names = colNames, row.names = FALSE)

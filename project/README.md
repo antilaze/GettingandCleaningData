@@ -1,10 +1,14 @@
 Getting and Cleaning Data Course Project
 =============================================
 The purpose of this project is to demonstrate the ability to collect, work with, 
-and clean a data set. The goal is to prepare tidy data that can be used for later analysis. The requirements of the project are to 1) submit a tidy data set, 2)
-provide one R script called run_analysis.R, 3) create a codeBook.md that describes
-the tidy data, and 4) a README.md that explains how the R script processes the 
-data.
+and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
+
+In this repo:
+- README.md: explanation of the project and the r script
+- run_analysis.R: srcipt used to clean data
+- codeBook.md: description of the tidy data
+- tidyData.txt: the cleaning data in txt format
+- tidyData.csv: the cleaning data in csv format
 
 
 ### Data
@@ -20,6 +24,12 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 The data can be downloaded here:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
+
+### System information
+Rstudio Version 1.1.463
+R version 3.5.2 (2018-12-20)
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+Running under: macOS Mojave 10.14.1
 
 ### Major tasks of the script
 
@@ -46,8 +56,8 @@ setwd("./UCI HAR Dataset")
 ```
 Loads the R packages for later use
 ```{r}
-library(tidyr)
-library(dplyr)
+library(tidyr)  ## version: tidyr_0.8.2
+library(dplyr)  ## version: dplyr_0.7.8 
 ```
 
 1. Merges the training and the test sets to one data frame, which contains 10299 observations (test set has 2947 obs. while train set has 7252 obs.) and 563 variables. 
@@ -87,8 +97,11 @@ fullDf <- fullDf[, c(1, 2, (varPosit+2))]
 actLab <- read.table("activity_labels.txt", header = FALSE)
 ## adds a new variable that contains the activity names to the data frame, then 
 ## replaces number labels of activity with the descriptive names.
-fullDf <- merge(fullDf, actLab, by.x ="V1.1", by.y = "V1") %>%
-      mutate("V1.1" = V2.y, V2.y = NULL) 
+fullDf[, 2] <- factor(fullDf[, 2], levels = actLab[,1], labels = actLab[,2])
+## an option is using merge(), yet doing this way the levels of the activity labels 
+## and the data frame will be reordered
+## fullDf <- merge(fullDf, actLab, by.x ="V1.1", by.y = "V1") %>%
+##           mutate("V1.1" = V2.y, V2.y = NULL) 
 ```
 
 4. Appropriately labels the data set with descriptive variable names
@@ -102,5 +115,5 @@ colnames(fullDf) <- colNames <- c("activity", "ID", as.character(varNames))
 ```{r}
 tDf <- group_by(fullDf, ID, activity) %>%
       summarise_all(funs(mean)) 
-write.csv(tDf, "tidyData.csv", sep = ",", col.names = colNames, row.names = FALSE)
+write.table(tDf, "tidyData.txt", sep = ",", col.names = colNames, row.names = FALSE)
 ```
