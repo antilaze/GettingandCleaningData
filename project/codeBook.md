@@ -21,18 +21,22 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ## Data Explanation
 
+
 ### Original Data set
 
-
-Original Data set |           |           |
--------------- |-------------- |--------------| -----------
-Data Set Characteristics: | Multivariate, Time-Series | Date Donated:| 2012-12-10
-Attribute Characteristics: | N/A | Missing Values: | N/A 
-Number of Instances: | 10299 | Number of Attributes: | 561 
+-----------------------------------------------------------------
+Data Set Characteristics:     Multivariate, Time-Series 
+Date Donated:                 2012-12-10
+Attribute Characteristics:    N/A 
+Missing Values:               N/A 
+Number of Instances:          10299 
+Number of Attributes:         561 
+-----------------------------------------------------------------
 
 
 Attribute Information:
 For each record in the dataset it is provided: 
+
 
 * Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
 
@@ -47,16 +51,19 @@ For each record in the dataset it is provided:
 
 ### Cleaning Dataset
 
-
-Cleaning Data Set |      |       |   
--------------- | -------------------- | --------------| -----------
-Data Set Characteristics: | Multivariate, Average value | Date Donated:| 2019-02-10
-Attribute Characteristics: | Mean or Standard Deviation | Missing Values: | N/A 
-Number of Instances: | 10299 | Number of Attributes: | 68 
+------------------------------------------------------
+Data Set Characteristics:     Multivariate, Average value 
+Date Created:                 2019-02-10
+Attribute Characteristics:    Mean or Standard Deviation
+Missing Values:               N/A 
+Number of Instances:          10299
+Number of Attributes:         68 
+------------------------------------------------------
 
 
 Attribute Information:
 For each record in the dataset it is provided: 
+
 
 * Average of the the mean or standard deviation of a measurement for each subject and each activity.
 
