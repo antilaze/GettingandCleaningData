@@ -44,11 +44,19 @@ For each record in the dataset it is provided:
 
 ### Cleaning Dataset
 
+<<<<<<< HEAD
 Cleaning Data Set |      |       |   
 -------------- | -------------- | --------------| -----------
 Data Set Characteristics: | Multivariate, Average value | Date Donated:| 2019-02-10
 Attribute Characteristics: | Mean or Standard Deviation | Missing Values: | N/A 
 Number of Instances: | 10299 | Number of Attributes: | 68 
+=======
+| Cleaning Data Set 
+|-------------- | ----------------------- | --------------| -----------
+|Data Set Characteristics: | Multivariate, Average value | Date Donated:| 2019-02-10
+|Attribute Characteristics:| Mean or Standard Deviation | Missing Values: | N/A 
+|Number of Instances: | 10299 | Number of Attributes: | 68 
+>>>>>>> e61c149fc72f6a5081e9726e0aa17c4073489f92
 
 Attribute Information:
 For each record in the dataset it is provided: 
