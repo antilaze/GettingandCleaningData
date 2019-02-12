@@ -23,11 +23,13 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ### Original Data set
 
+
 Original Data set |           |           |
 -------------- |-------------- |--------------| -----------
 Data Set Characteristics: | Multivariate, Time-Series | Date Donated:| 2012-12-10
 Attribute Characteristics: | N/A | Missing Values: | N/A 
 Number of Instances: | 10299 | Number of Attributes: | 561 
+
 
 Attribute Information:
 For each record in the dataset it is provided: 
@@ -42,21 +44,16 @@ For each record in the dataset it is provided:
 
 * An identifier of the subject who carried out the experiment.
 
+
 ### Cleaning Dataset
 
-<<<<<<< HEAD
+
 Cleaning Data Set |      |       |   
--------------- | -------------- | --------------| -----------
+-------------- | -------------------- | --------------| -----------
 Data Set Characteristics: | Multivariate, Average value | Date Donated:| 2019-02-10
 Attribute Characteristics: | Mean or Standard Deviation | Missing Values: | N/A 
 Number of Instances: | 10299 | Number of Attributes: | 68 
-=======
-| Cleaning Data Set 
-|-------------- | ----------------------- | --------------| -----------
-|Data Set Characteristics: | Multivariate, Average value | Date Donated:| 2019-02-10
-|Attribute Characteristics:| Mean or Standard Deviation | Missing Values: | N/A 
-|Number of Instances: | 10299 | Number of Attributes: | 68 
->>>>>>> e61c149fc72f6a5081e9726e0aa17c4073489f92
+
 
 Attribute Information:
 For each record in the dataset it is provided: 
@@ -110,7 +107,7 @@ In the cleaning dataset, we take the measurements on the mean and standard devia
 ### Data Summary
 
 "Num" | varNames" | "class" | "range" | "mean"
---- |----------------------------|-------|----------------------|-------------
+--- |---------------------------------|-------|--------------------|-------------
 "1" | "ID" | "integer" | "1 / 30" | "Not available"
 "2" | "activity" | "factor" | "WALKING / WALKING_UPSTAIRS /WALKING_DOWNSTAIRS / SITTING / STANDING / LAYING" | "Not available"
 "3" | "tBodyAcc-mean()-X" | "numeric" | "0.22 / 0.3" | "0.27"
