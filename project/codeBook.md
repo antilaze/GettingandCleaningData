@@ -50,7 +50,7 @@ For each record in the dataset it is provided:
 
 ### Cleaning Dataset
 
-Data Set Characteristics:  |  Multivariate, Average value 
+Data Set Characteristics:  |   Average value (floating-point values)
 -------------------------- | -----------------------------
 Date Created:              |   2019-02-10
 Attribute Characteristics: |   Mean or Standard Deviation
@@ -58,18 +58,8 @@ Missing Values:            |   N/A
 Number of Instances:       |   10299
 Number of Attributes:      |   68 
 
-
-
 Attribute Information:
-For each record in the dataset it is provided: 
-
-
-* Average of the the mean or standard deviation of a measurement for each subject and each activity.
-
-* Its activity discriptive labels. 
-
-* An ID of the subject who carried out the experiment.
-
+For a given subject and activity, 66 averaged signal measurements.
 
 
 ## Variable descriptions
